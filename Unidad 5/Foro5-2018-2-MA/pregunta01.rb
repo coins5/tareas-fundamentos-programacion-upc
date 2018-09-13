@@ -1,9 +1,52 @@
 def calcularresultadoVeredicto(pregunta1)
+  contadorS = 0.0
+  contadorN = 0.0
+  contadorX = 0.0
 
+  ganador = ""
+  for i in 0..pregunta1.size-1
+    case (pregunta1[i])
+      when "S"
+        contadorS = contadorS + 1
+      when "N"
+        contadorN = contadorN + 1
+      when "X"
+        contadorX = contadorX + 1 
+    end
+  end
+
+  encontrarMayor = 0
+  if (contadorS > contadorN)
+    encontrarMayor = contadorS
+    ganador = "SI"
+  else
+    encontrarMayor = contadorN
+    ganador = "NO"
+  end
+  if (contadorX > encontrarMayor)
+    ganador = "NS"
+    encontrarMayor = contadorX
+  end
+
+  array = [
+    contadorS*100/pregunta1.size,
+    contadorN*100/pregunta1.size,
+    contadorX*100/pregunta1.size,
+    ganador
+  ]
+
+  return array
 end
 
 def determinaraceptacion(pregunta2)
-
+  contadorNS = 0.0
+  for i in 0..pregunta2.size-1
+    if (pregunta2[i] == "0")
+      contadorNS = contadorNS + 1
+    end
+  end
+  puts result = (100.0*(pregunta2.size - contadorNS)/pregunta2.size).round(2)
+  return result
 end
 
 #--- zona de test ----

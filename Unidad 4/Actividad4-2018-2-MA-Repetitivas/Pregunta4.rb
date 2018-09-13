@@ -84,7 +84,8 @@ def mesMejorRentabilidad(costoprod)
     precioTransporte = precioTransporte * (1 + CostoTransporte(i))
 
     # En los comentarios de arriba (línea 67 a 69) demostramos que se puede calcular de esta forma
-    rentabilidad = ((100 - costoprod)/100.0) * (precioMercado) - precioTransporte
+    rentabilidad = 0.6 * (precioMercado) - precioTransporte
+    # rentabilidad = ((100 - costoprod)/100.0) * (precioMercado) - precioTransporte
 
     # Vemos si el mes actual (valor de la variable "i")
     # es mas rentable que el
