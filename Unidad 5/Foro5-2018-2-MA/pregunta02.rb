@@ -1,17 +1,41 @@
 def hombresMayor40(listaEdades, listaSexos)
-
+	contador = 0
+	for i in 0..listaEdades.size-1
+		if (listaSexos[i] == "M" and listaEdades[i] > 40)
+			contador = contador + 1
+		end
+	end
+	return contador
 end
 
 def obtenerNombre(dni, listaDocumentos, listaNombres)
-
+	for i in 0..listaDocumentos.size-1
+		if (listaDocumentos[i] == dni)
+			return listaNombres[i]
+		end
+	end
 end
 
 def obtenerNumHomonimos(nombre, listaNombres)
-
+	contador = 0
+	for i in 0..listaNombres.size-1
+		if (listaNombres[i] == nombre)
+			contador = contador + 1
+		end
+	end
+	return contador
 end
 
 def coincidenciaEdad(documentos, edades)
-
+	# Se puede hacer descomponiendo de 100 en 100, como hacíamos para hallar los dígitos
+	# Pero lo haremos index(str)
+	contador = 0
+	for i in 0..documentos.size-1
+		if (documentos[i].to_s.index(edades[i].to_s) != nil)
+			contador = contador + 1
+		end
+	end
+	return contador
 end
 
 #--- zona de test ----

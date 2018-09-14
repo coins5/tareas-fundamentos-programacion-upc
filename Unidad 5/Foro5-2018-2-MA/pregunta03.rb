@@ -1,12 +1,31 @@
 def obtener_puntaje_promedio(encuestas)
-
+  suma = 0.0
+  for i in 0..encuestas.size-1
+    suma = suma + encuestas[i]
+  end
+  result = (suma/encuestas.size).round(2)
+  return result
 end
     
 def calcular_porcentaje_excelente(calificaciones)
-
+  contador = 0.0
+  for i in 0..calificaciones.size-1
+    if (calificaciones[i] == 5.0)
+      contador = contador + 1
+    end
+  end
+  result = (contador * 100.0 / calificaciones.size).round(2)
+  return result
 end
     
 def buscar_malos_pesimos(puntaje,analista)
+  # Buscar como agregar elementos a un array
+  
+  for i in 0..puntaje.size-1
+    if (puntaje[i] < 3.0)
+
+    else
+  end
 
 end
 

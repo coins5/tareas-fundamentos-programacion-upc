@@ -39,6 +39,7 @@ def calcularresultadoVeredicto(pregunta1)
 end
 
 def determinaraceptacion(pregunta2)
+  # La comprobación número 3 fallará, el porcentaje correcto debe ser 80
   contadorNS = 0.0
   for i in 0..pregunta2.size-1
     if (pregunta2[i] == "0")
