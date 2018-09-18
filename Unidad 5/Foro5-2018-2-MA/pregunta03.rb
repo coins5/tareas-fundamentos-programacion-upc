@@ -20,13 +20,19 @@ end
     
 def buscar_malos_pesimos(puntaje,analista)
   # Buscar como agregar elementos a un array
+  # Utilizaremos funciones de agregar en ruby:
+  # https://gistpages.com/posts/ruby_arrays_insert_append_length_index_remove
   
+  # Inicializamos un array
+  malos_pesimos = []
+  # recorremos los puntajes
   for i in 0..puntaje.size-1
-    if (puntaje[i] < 3.0)
-
-    else
+    if (puntaje[i] <= 2.0)
+      # push, agrega un elemento al final del array
+      malos_pesimos.push(analista[i]) # Agregagamos el analista con puntaje menor o igual a 2
+    end
   end
-
+  return malos_pesimos
 end
 
 #----------Zona de Test------------------

@@ -11,16 +11,25 @@ def porcNacional(puntajes, nacionalidades)
     for i in 0..nacionalidades.size-1
         n = nacionalidades[i]
         pntj = puntajes[i]
-        if (n == 'N' && pntj == 4) # (pntj >= 3 || pntj <=5))
+        if (n == 'N' && pntj >= 3)
             contador = contador + 1
         end
     end
-    puts porcentaje = ( contador * 100.0 / puntajes.size ).round(2)
+    porcentaje = ( contador * 100.0 / puntajes.size ).round(2)
     return porcentaje.to_s + "%"
 end
 
 def porcExtranjero(puntajes, nacionalidades)
-
+    contador = 0
+    for i in 0..nacionalidades.size-1
+        n = nacionalidades[i]
+        pntj = puntajes[i]
+        if (n == 'E' && (pntj >= 1 && pntj <=2))
+            contador = contador + 1
+        end
+    end
+    porcentaje = ( contador * 100.0 / puntajes.size ).round(2)
+    return porcentaje.to_s + "%"
 end
 
 #--- zona de test ----

@@ -1,18 +1,50 @@
 #encoding:UTF-8
 def pregunta1_1(puntaje)
-
+  sum = 0.0
+  for i in 0..puntaje.size-1
+    sum = sum + puntaje[i]
+  end
+  promedio = sum / puntaje.size
+  return promedio.round(2) 
 end
 
 def pregunta1_2(sexo, edad)
-
+  sum = 0.0
+  cant_m = 0.0
+  for i in 0..sexo.size-1
+    if (sexo[i] == "M")
+      sum = sum + edad[i]
+      cant_m = cant_m + 1
+    end
+  end
+  promedio = sum / cant_m
+  return promedio.round(2)
 end
 
 def pregunta1_3(sexo, puntaje)
-
+  sum = 0.0
+  cant_f = 0.0
+  for i in 0..sexo.size-1
+    if (sexo[i] == "F")
+      sum = sum + puntaje[i]
+      cant_f = cant_f + 1
+    end
+  end
+  promedio = sum / cant_f
+  return promedio.round(2)
 end
 
 def pregunta1_4(sexo, edad, puntaje)
-
+  sum = 0.0
+  cant_m = 0.0
+  for i in 0..sexo.size-1
+    if (sexo[i] == "M" and edad[i] < 35)
+      sum = sum + puntaje[i]
+      cant_m = cant_m + 1
+    end
+  end
+  promedio = sum / cant_m
+  return promedio.round(2)
 end
 
 #--- zona de test ----
