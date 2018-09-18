@@ -46,7 +46,7 @@ def determinaraceptacion(pregunta2)
       contadorNS = contadorNS + 1
     end
   end
-  puts result = (100.0*(pregunta2.size - contadorNS)/pregunta2.size).round(2)
+  result = (100.0*(pregunta2.size - contadorNS)/pregunta2.size).round(2)
   return result
 end
 
